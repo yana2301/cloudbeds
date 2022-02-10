@@ -1,0 +1,47 @@
+{
+  "name": "User",
+  "namespace": "com.cloudbeds.assignment.grpc.model",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "long"
+      }
+    },
+    {
+      "name": "firstName",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "lastName",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "email",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "password",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "addresses",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "Address",
+          "type": "Address"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Address",
+  "namespace": "com.cloudbeds.assignment.grpc.model",
+  "type": "record",
+  "fields": [
+    {
+      "name": "addressLine1",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "addressLine2",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "city",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "state",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "zipcode",
+      "type": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "country",
+      "type": {
+        "type": "string"
+      }
+    }
+  ]
+}

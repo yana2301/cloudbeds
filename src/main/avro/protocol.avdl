@@ -1,0 +1,15 @@
+@namespace("com.cloudbeds.assignment.grpc")
+protocol DataProtocol {
+	import schema "Address.avsc";
+	import schema "User.avsc";
+
+	com.cloudbeds.assignment.grpc.model.User getUser(long id);
+
+	long createUser(com.cloudbeds.assignment.grpc.model.User user);
+
+	void updateUser(long id, com.cloudbeds.assignment.grpc.model.User user);
+
+	void deleteUser(long id);
+
+	array<com.cloudbeds.assignment.grpc.model.User> findUsers(string country);
+}

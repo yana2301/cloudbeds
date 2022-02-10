@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-1.yaml
+  - changeSet:
+      id: 1
+      author: yana
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(512)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(50)
+        - createTable:
+            tableName: address
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address_1
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_2
+                  type: varchar(50)
+              - column:
+                  name: city
+                  type: varchar(50)
+              - column:
+                  name: state
+                  type: varchar(50)
+              - column:
+                  name: zip
+                  type: varchar(10)
+              - column:
+                  name: country
+                  type: varchar(50)
+              - column:
+                  name: user_id
+                  type: BIGINT
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableCatalogName: cloudbeds
+            baseTableName: address
+            baseTableSchemaName: public
+            constraintName: fk_address_person
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableCatalogName: cloudbeds
+            referencedTableName: users
+            referencedTableSchemaName: public
+            validate: true
